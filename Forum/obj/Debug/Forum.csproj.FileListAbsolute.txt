@@ -1,0 +1,7 @@
+c:\users\sean\documents\visual studio 2010\Projects\Forum\Forum\bin\Forum.dll
+c:\users\sean\documents\visual studio 2010\Projects\Forum\Forum\bin\Forum.pdb
+c:\users\sean\documents\visual studio 2010\Projects\Forum\Forum\bin\EntityFramework.dll
+c:\users\sean\documents\visual studio 2010\Projects\Forum\Forum\bin\EntityFramework.xml
+c:\users\sean\documents\visual studio 2010\Projects\Forum\Forum\obj\Debug\ResolveAssemblyReference.cache
+c:\users\sean\documents\visual studio 2010\Projects\Forum\Forum\obj\Debug\Forum.dll
+c:\users\sean\documents\visual studio 2010\Projects\Forum\Forum\obj\Debug\Forum.pdb
