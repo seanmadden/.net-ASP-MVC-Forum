@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using System.Data.Entity;
+using Forum.Models;
 
 namespace Forum
 {
@@ -31,6 +33,8 @@ namespace Forum
 
         protected void Application_Start()
         {
+            Database.SetInitializer<ForumDB>(new BoardInitializer());
+
             AreaRegistration.RegisterAllAreas();
 
             RegisterGlobalFilters(GlobalFilters.Filters);

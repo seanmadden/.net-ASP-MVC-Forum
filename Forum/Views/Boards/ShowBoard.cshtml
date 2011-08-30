@@ -1,0 +1,47 @@
+﻿@model Forum.Models.Board
+
+@{
+    ViewBag.Title = "asdf";
+}
+
+<h2>@Model.Title</h2>
+
+<h3>@{
+    
+    Html.ActionLink("New Topic", "newTopic", new { id = Model.ID });
+    
+}</h3>
+
+<table class="Board">
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Author
+        </th>
+        <th>
+            Time Posted
+        </th>
+
+    </tr>
+
+@foreach (var item in Model.Messages) {
+    <tr>
+        <td>
+            @*Html.DisplayFor(modelItem => item.Title)*@
+            @*Html.ActionLink(item.Title, item.ID.ToString(), "./messages/")*@
+            @Html.ActionLink(item.Title, "ShowMessage", new {ID = item.ID})
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Author)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Created)
+        </td>
+
+
+    </tr>
+}
+
+</table>

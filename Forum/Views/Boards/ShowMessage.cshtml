@@ -1,0 +1,41 @@
+﻿@model Forum.Models.Message
+
+@{
+    ViewBag.Title = "ShowMessage";
+}
+
+<h2>@Model.Title</h2>
+
+<h3>@Html.ActionLink("Add Reply", "reply", new { id = Model.ID })</h3>
+
+<table>
+    <tr>
+        <th>
+            Title
+        </th>
+        <th>
+            Body
+        </th>
+        <th>
+            Author
+        </th>
+
+    </tr>
+
+@foreach (var item in Model.Posts) {
+    <tr>
+        <td>
+           @item.Title           
+        </td>
+        <td>
+            @item.Body
+        </td>
+        <td>
+            @item.Author
+        </td>
+
+
+    </tr>
+}
+
+</table>
