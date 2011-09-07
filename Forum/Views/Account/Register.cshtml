@@ -53,6 +53,13 @@
                 @Html.ValidationMessageFor(m => m.ConfirmPassword)
             </div>
 
+            <div class="editor-label">
+                @Html.LabelFor(m => m.admin)
+            </div>
+            <div class="editor-field">
+                @Html.CheckBoxFor(m => m.admin)
+            </div>
+
             <p>
                 <input type="submit" value="Register" />
             </p>

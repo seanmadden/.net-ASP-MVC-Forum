@@ -9,110 +9,110 @@ using Forum.Models;
 
 namespace Forum.Controllers
 { 
-    public class BoardsController : Controller
-    {
-        private ForumDB db = new ForumDB();
+	public class BoardsController : Controller
+	{
+		private ForumDB db = new ForumDB();
 
-        //
-        // GET: /Boards/
+		//
+		// GET: /Boards/
 
-        public ViewResult Index()
-        {
-            return View(db.Boards.ToList());
-        }
+		public ViewResult Index()
+		{
+			return View(db.Boards.ToList());
+		}
 
-        //
-        // GET: /Boards/Details/5
+		//
+		// GET: /Boards/Details/5
 
-        public ViewResult Details(int id)
-        {
-            Board board = db.Boards.Find(id);
-            return View(board);
-        }
+		public ViewResult Details(int id)
+		{
+			Board board = db.Boards.Find(id);
+			return View(board);
+		}
 
-        //
-        // GET: /Boards/Create
+		//
+		// GET: /Boards/Create
 
-        public ActionResult Create()
-        {
-            return View();
-        } 
+		public ActionResult Create()
+		{
+			return View();
+		} 
 
-        //
-        // POST: /Boards/Create
+		//
+		// POST: /Boards/Create
 
-        [HttpPost]
-        public ActionResult Create(Board board)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Boards.Add(board);
-                db.SaveChanges();
-                return RedirectToAction("Index");  
-            }
+		[HttpPost]
+		public ActionResult Create(Board board)
+		{
+			if (ModelState.IsValid)
+			{
+				db.Boards.Add(board);
+				db.SaveChanges();
+				return RedirectToAction("Index");  
+			}
 
-            return View(board);
-        }
-        
-        //
-        // GET: /Boards/Edit/5
+			return View(board);
+		}
+		
+		//
+		// GET: /Boards/Edit/5
  
-        public ActionResult Edit(int id)
-        {
-            Board board = db.Boards.Find(id);
-            return View(board);
-        }
+		public ActionResult Edit(int id)
+		{
+			Board board = db.Boards.Find(id);
+			return View(board);
+		}
 
-        //
-        // POST: /Boards/Edit/5
+		//
+		// POST: /Boards/Edit/5
 
-        [HttpPost]
-        public ActionResult Edit(Board board)
-        {
-            if (ModelState.IsValid)
-            {
-                db.Entry(board).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            return View(board);
-        }
+		[HttpPost]
+		public ActionResult Edit(Board board)
+		{
+			if (ModelState.IsValid)
+			{
+				db.Entry(board).State = EntityState.Modified;
+				db.SaveChanges();
+				return RedirectToAction("Index");
+			}
+			return View(board);
+		}
 
-        //
-        // GET: /Boards/Delete/5
+		//
+		// GET: /Boards/Delete/5
  
-        public ActionResult Delete(int id)
-        {
-            Board board = db.Boards.Find(id);
-            return View(board);
-        }
+		public ActionResult Delete(int id)
+		{
+			Board board = db.Boards.Find(id);
+			return View(board);
+		}
 
-        //
-        // POST: /Boards/Delete/5
+		//
+		// POST: /Boards/Delete/5
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
-        {            
-            Board board = db.Boards.Find(id);
-            db.Boards.Remove(board);
-            db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+		[HttpPost, ActionName("Delete")]
+		public ActionResult DeleteConfirmed(int id)
+		{            
+			Board board = db.Boards.Find(id);
+			db.Boards.Remove(board);
+			db.SaveChanges();
+			return RedirectToAction("Index");
+		}
 
-        protected override void Dispose(bool disposing)
-        {
-            db.Dispose();
-            base.Dispose(disposing);
-        }
+		protected override void Dispose(bool disposing)
+		{
+			db.Dispose();
+			base.Dispose(disposing);
+		}
 
 
-        //
-        // GET: /Boards/ShowBoard/5
+		//
+		// GET: /Boards/ShowBoard/5
 
-        public ActionResult ShowBoard(int id)
-        {
-            // TODO: view...
-            //var m = from 
+		public ActionResult ShowBoard(int id)
+		{
+			// TODO: view...
+			//var m = from 
 
 			//var p = db.Messages.Find(id).ToString;
 
@@ -121,7 +121,7 @@ namespace Forum.Controllers
 
 			return View(x);
 			
-        }
+		}
 
 		public ActionResult ShowMessage(int id)
 		{
@@ -131,6 +131,7 @@ namespace Forum.Controllers
 			return View(x);
 		}
 
+		[HttpGet]
 		public ActionResult Reply(int id)
 		{
 			ViewBag.MessageID = id;
@@ -154,6 +155,7 @@ namespace Forum.Controllers
 
 		}
 
+		[HttpGet]
 		public ActionResult newTopic(int id)
 		{
 			Message m = new Message();
@@ -177,5 +179,5 @@ namespace Forum.Controllers
 			return View(message);
 		}
 
-    }
+	}
 }

@@ -330,3 +330,13 @@ div#title {
 table.Board {
     width: 100%;
 }
+
+table.Posts 
+{
+    width: 100%;
+}
+
+#author
+{
+    float: right;
+}

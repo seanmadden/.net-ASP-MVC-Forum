@@ -8,33 +8,18 @@
 
 <h3>@Html.ActionLink("Add Reply", "reply", new { id = Model.ID })</h3>
 
-<table>
-    <tr>
-        <th>
-            Title
-        </th>
-        <th>
-            Body
-        </th>
-        <th>
-            Author
-        </th>
-
-    </tr>
+<table class="Posts">
 
 @foreach (var item in Model.Posts) {
     <tr>
-        <td>
-           @item.Title           
-        </td>
+        <th>
+           @item.Title <span id="author">@item.Author</span>
+        </th>
+    </tr>
+    <tr>
         <td>
             @item.Body
         </td>
-        <td>
-            @item.Author
-        </td>
-
-
     </tr>
 }
 
